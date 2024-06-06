@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Volume Shapes</title>
+</head>
+<body>
+  <h1>Volume Shapes</h1>
+
+  <h2>Volume Balok</h2>
+  <label for="panjang">Panjang:</label>
+  <input type="number" id="panjang" />
+  <br>
+  <label for="lebar">Lebar:</label>
+  <input type="number" id="lebar" />
+  <br>
+  <label for="tinggi">Tinggi:</label>
+  <input type="number" id="tinggi" />
+  <br>
+  <button onclick="calculateVolumeBalok()">Hitung Volume Balok</button>
+  <p>Hasil: <span id="volumeBalok"></span></p>
+
+  <h2>Volume Kubus</h2>
+  <label for="sisi">Sisi:</label>
+  <input type="number" id="sisi" />
+  <br>
+  <button onclick="calculateVolumeKubus()">Hitung Volume Kubus</button>
+  <p>Hasil: <span id="volumeKubus"></span></p>
+
+  <h2>Volume Prisma Segitiga</h2>
+  <label for="alas">Alas:</label>
+  <input type="number" id="alas" />
+  <br>
+  <label for="tinggiAlas">Tinggi Alas:</label>
+  <input type="number" id="tinggiAlas" />
+  <br>
+  <label for="tinggiPrisma">Tinggi Prisma:</label>
+  <input type="number" id="tinggiPrisma" />
+  <br>
+  <button onclick="calculateVolumePrisma()">Hitung Volume Prisma Segitiga</button>
+  <p>Hasil: <span id="volumePrisma"></span></p>
+
+  <script>
+    function calculateVolumeBalok() {
+      const panjang = parseFloat(document.getElementById("panjang").value);
+      const lebar = parseFloat(document.getElementById("lebar").value);
+      const tinggi = parseFloat(document.getElementById("tinggi").value);
+      const volumeBalok = panjang * lebar * tinggi;
+      document.getElementById("volumeBalok").textContent = volumeBalok.toFixed(2);
+    }
+
+    function calculateVolumeKubus() {
+      const sisi = parseFloat(document.getElementById("sisi").value);
+      const volumeKubus = sisi * sisi * sisi;
+      document.getElementById("volumeKubus").textContent = volumeKubus.toFixed(2);
+    }
+
+    function calculateVolumePrisma() {
+      const alas = parseFloat(document.getElementById("alas").value);
+      const tinggiAlas = parseFloat(document.getElementById("tinggiAlas").value);
+      const tinggiPrisma = parseFloat(document.getElementById("tinggiPrisma").value);
+      const volumePrisma = (alas * tinggiAlas * tinggiPrisma) / 2;
+      document.getElementById("volumePrisma").textContent = volumePrisma.toFixed(2);
+    }
+  </script>
+</body>
+</html>
